@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 
 const bookRouter = require("./routes/bookRoutes");
 app.use("/api/book", bookRouter);
+const userRouter = require("./routes/userRoutes");
+app.use("/", userRouter);
 
 app.listen(port, () => {
   console.log(`Server running in port ${port}`);
