@@ -26,6 +26,7 @@ const addBook = async (req, res) => {
       title: req.body.title,
       about: req.body.about,
       author: req.body.author,
+      desc: req.body.desc,
       imagePath: req.body.imagePath,
     });
     res.status(200).json(newBook);
@@ -51,6 +52,9 @@ const updateBook = async (req, res) => {
       book.author = req.body.author;
     }
 
+    if (req.body.desc) {
+      book.desc = req.body.desc;
+    }
     if (req.body.imagePath) {
       book.imagePath = req.body.imagePath;
     }
